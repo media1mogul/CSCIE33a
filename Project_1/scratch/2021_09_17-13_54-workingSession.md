@@ -49,5 +49,50 @@ Everything up-to-date
 This did not do what I thought would happen.
 It appears that the conflict was resolved automatically.
 
+Try again.
+ - Introduced conflicts to the same line in index.html from the web adn from local.
+ - directly commited the web based changes to origin/main.
+ - committed the local changes to the local origin/main.
+ 
+ <pre><font color="#4E9A06"><b>perftest@ubuntu</b></font>:<font color="#3465A4"><b>~/DevCode/CSCIE33a</b></font>$ git push
+Username for &apos;https://github.com&apos;: media1mogul
+Password for &apos;https://media1mogul@github.com&apos;: 
+To https://github.com/media1mogul/CSCIE33a
+ <font color="#CC0000">! [rejected]       </font> main -&gt; main (fetch first)
+<font color="#CC0000">error: failed to push some refs to &apos;https://github.com/media1mogul/CSCIE33a&apos;</font>
+<font color="#C4A000">hint: Updates were rejected because the remote contains work that you do</font>
+<font color="#C4A000">hint: not have locally. This is usually caused by another repository pushing</font>
+<font color="#C4A000">hint: to the same ref. You may want to first integrate the remote changes</font>
+<font color="#C4A000">hint: (e.g., &apos;git pull ...&apos;) before pushing again.</font>
+<font color="#C4A000">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</font>
+To https://github.com/media1mogul/CSCIE33a
+ <font color="#CC0000">! [rejected]       </font> main -&gt; main (fetch first)
+<font color="#CC0000">error: failed to push some refs to &apos;https://github.com/media1mogul/CSCIE33a&apos;</font>
+<font color="#C4A000">hint: Updates were rejected because the remote contains work that you do</font>
+<font color="#C4A000">hint: not have locally. This is usually caused by another repository pushing</font>
+<font color="#C4A000">hint: to the same ref. You may want to first integrate the remote changes</font>
+<font color="#C4A000">hint: (e.g., &apos;git pull ...&apos;) before pushing again.</font>
+<font color="#C4A000">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</font>
+</pre>
+ 
+Ok. So I do a git pull and this time I see the conflict as I should.
+
+<pre><font color="#4E9A06"><b>perftest@ubuntu</b></font>:<font color="#3465A4"><b>~/DevCode/CSCIE33a</b></font>$ git pull
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (9/9), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 3), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (5/5), 793 bytes | 793.00 KiB/s, done.
+From https://github.com/media1mogul/CSCIE33a
+   9117827..2866172  main       -&gt; origin/main
+Auto-merging Project_1/scratch/index.html
+CONFLICT (content): Merge conflict in Project_1/scratch/index.html
+Automatic merge failed; fix conflicts and then commit the result.
+<font color="#4E9A06"><b>perftest@ubuntu</b></font>:<font color="#3465A4"><b>~/DevCode/CSCIE33a</b></font>$ 
+
+</pre>
+
+
 
 **Tech notes**
+ - git config --global credential.helper cache
