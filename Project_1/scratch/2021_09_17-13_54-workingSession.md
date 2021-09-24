@@ -92,7 +92,51 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 </pre>
 
+I  used git -a to commit the local fixed html to the local origin/main.
+
+```
+perftest@ubuntu:~/DevCode/CSCIE33a$ git commit -a
+On branch main
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Project_1/scratch/2021_09_17-13_54-workingSession(0).md
+	Project_1/scratch/2021_09_17-13_54-workingSession(1).md
+	Project_1/scratch/2021_09_17-13_54-workingSession(2).md
+	Project_1/scratch/2021_09_17-13_54-workingSession(3).md
+	Project_1/scratch/index(0).html
+	Project_1/scratch/index(1).html
+
+nothing added to commit but untracked files present (use "git add" to track)
+```
+Now I did the git push.
+
+```
+perftest@ubuntu:~/DevCode/CSCIE33a$ git push
+Username for 'https://github.com': media1mogul
+Password for 'https://media1mogul@github.com': 
+Enumerating objects: 26, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (16/16), 2.80 KiB | 1.40 MiB/s, done.
+Total 16 (delta 9), reused 0 (delta 0)
+remote: Resolving deltas: 100% (9/9), completed with 3 local objects.
+To https://github.com/media1mogul/CSCIE33a
+   2866172..6602789  main -> main
+Everything up-to-date
+```
+Now we are going to test doing a hard reset
+
+```
+```
 
 
 **Tech notes**
  - git config --global credential.helper cache
+ - `git commit -am`
+``` 
+git commit -a automatically stage all tracked, modified files before the commit If you think the git add stage of the workflow is too cumbersome, Git allows you to skip that part with the -a option. This basically tells Git to run git add on any file that is "tracked" - that is, any file that was in your last commit and has been modified. This allows you to do a more Subversion style workflow if you want, simply editing files and then running git commit -a when you want to snapshot everything that has been changed. You still need to run git add to start tracking new files, though, just like Subversion
+```
