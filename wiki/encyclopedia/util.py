@@ -8,7 +8,12 @@ def list_entries():
     """
     Returns a list of all names of encyclopedia entries.
     """
+
+    # return list of directories and files.
+    # We only care about the files
     _, filenames = default_storage.listdir("entries")
+    # return a sorted list of only markdown files by name.
+    # do not include the md extension
     return list(sorted(re.sub(r"\.md$", "", filename)
                 for filename in filenames if filename.endswith(".md")))
 
