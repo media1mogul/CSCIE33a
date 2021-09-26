@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tasks List</title>
+        <link href="{% static 'tasks/styles.css' %}" rel="stylesheet" >
+    </head>
+    <body>
+        <h1>
+          Today: {{ today }}
+            Tasks
+        </h1>
+        <ul>
+            {% for task in tasksList %}
+                <li>{{ task }}</li>
+            {% empty %}
+                <li>There are no tasks in the list.</li>
+            {% endfor %}
+        </ul>
+
+        {% block bodyHtml %}
+        {% endblock %}
+    </body>
+</html>
