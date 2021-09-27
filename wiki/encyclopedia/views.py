@@ -48,6 +48,7 @@ def page(request, title):
         return HttpResponseRedirect(url)
     else:
         context = {
+            "is_error": False,
             "title": title,
             "bold_text": title,
             "body": markdowner.convert(str(body))
@@ -102,6 +103,23 @@ def error(request):
     context = {
         "title": request.GET.get('title'),
         "bold_text": request.GET.get('bold_text'),
-        "body": request.GET.get('body')
+        "body": request.GET.get('body'),
+        "is_error": True
     }
     return render(request, "encyclopedia/page.html", context)
+
+
+def edit(request):
+    """
+    Handle the user requesting to add a new page
+    - It appears here that a session is appropriate. I will use it to compare the before and after directory listing
+    :param request:
+    :return:
+    """
+    context = {
+        "title": f"Editing: { request.GET.get('title') }",
+        "bold_text": request.GET.get('title'),
+        "body": request.GET.get('title'),
+    }
+
+    return render(request, "encyclopedia/edit.html", context)

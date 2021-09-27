@@ -32,6 +32,15 @@
                 {% block bold_text %}
                 {% endblock %}
                 </h1>
+                   {% if not is_error  %}
+                        {% autoescape on %}
+                            {% block edit_me_url %}
+                                <div style="position: absolute; top: 5px; left: 20px;">
+                                    <a href="{% url 'wiki:edit' %}?title={{ title }} ">Edit This Page</a>
+                                </div>
+                            {% endblock %}
+                        {% endautoescape %}
+                    {% endif %}
                 {% block body %}
                 {% endblock %}
 

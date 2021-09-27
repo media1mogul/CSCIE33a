@@ -5,6 +5,10 @@
     {% block bold_text %}
         {{ bold_text }}
     {% endblock %}
-    {%  block body %}
+    {% if title == "Error" %}
+        TRUE
+    {% endif %}
+     {%  block body %}
         {{  body |safe }}
     {%  endblock %}
+

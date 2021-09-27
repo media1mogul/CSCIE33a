@@ -32,7 +32,7 @@
 - [X] Otherwise, the encyclopedia entry should be saved to disk, and the user should be taken to the new entry’s page.
 
 # Edit Page: 
-- [ ] On each entry page, the user should be able to click a link to be taken to a page where the user can edit that entry’s Markdown content in a textarea.
+- [X] On each entry page, the user should be able to click a link to be taken to a page where the user can edit that entry’s Markdown content in a textarea.
 - [ ] The textarea should be pre-populated with the existing Markdown content of the page. (i.e., the existing content should be the initial value of the textarea).
 - [ ] The user should be able to click a button to save the changes made to the entry.
 - [ ] Once the entry is saved, the user should be redirected back to that entry’s page.
@@ -47,5 +47,3 @@
 # Challenge 
 - [ ] Try implementing the Markdown to HTML conversion without using any external libraries, supporting headings, boldface text, unordered lists, links, and paragraphs. You may find using regular expressions in Python helpful.
 
-# Hints
-- By default, when substituting a value in a Django template, Django HTML-escapes the value to avoid outputting unintended HTML. If you want to allow for an HTML string to be outputted, you can do so with the safe filter (as by adding |safe after the variable name you’re substituting).
