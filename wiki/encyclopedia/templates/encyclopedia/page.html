@@ -1,5 +1,10 @@
 {%  extends "encyclopedia/layout.html" %}
+    {% block title %}
+        {{ title }}
+    {% endblock %}
+    {% block bold_text %}
+        {{ bold_text }}
+    {% endblock %}
     {%  block body %}
-        <h2>{{ name }}</h2>
-        {{  wiki_page_text |safe }}
+        {{  body |safe }}
     {%  endblock %}
